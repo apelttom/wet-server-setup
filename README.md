@@ -19,7 +19,7 @@ You will probably wanna tweak out the configuration you can find it in the folde
 
 ## You might need some of these commands
 
-Command to start the server after stopping
+Command to stop the server after starting
 
 `docker stop wolf_applestain`
 
