@@ -1,8 +1,9 @@
 # How to set up Wolfenstein Enemy Territory 2.06b PRO server Docker version
  
 You have to allow some udp traffic on ports 27960 - 27970. To do this simply use program ufw and these commands:
-    `sudo ufw allow 27950:27970/udp`
-    `sudo ufw enable`
+
+`sudo ufw allow 27950:27970/udp`
+`sudo ufw enable`
 
 Then restart the machine
 
