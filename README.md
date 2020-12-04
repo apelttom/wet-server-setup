@@ -19,12 +19,15 @@ docker run -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/e
 ## You might need some of these commands
 
 >Command to start the server after stopping
+
 docker stop wolf_applestain
 
 >Command to start the server after stopping
+
 docker start wolf_applestain
 
 >Command to run the server detached and autorestart on failure
+
 docker run --restart=always -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
 
 ### Authors:
