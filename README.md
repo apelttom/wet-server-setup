@@ -1,42 +1,38 @@
-How to set up Wolfenstein Enemy Territory 2.06b PRO server Docker version
+# How to set up Wolfenstein Enemy Territory 2.06b PRO server Docker version
  
- You have to allow some udp traffic on ports 27960 - 27970
- To do this simply use program ufw and these commands:
+You have to allow some udp traffic on ports 27960 - 27970. To do this simply use program ufw and these commands:
     sudo ufw allow 27950:27970/udp
     sudo ufw enable
 
- Then restart the machine
+Then restart the machine
 
- You will probably wanna tweak out the configuration
- you can find it in the folder source/configs/etpro.cfg
+You will probably wanna tweak out the configuration you can find it in the folder source/configs/etpro.cfg You should at least change the ip address of the server. Then proceed with server startup.
 
- You should at least change the ip address of the server
- Then proceed with server startup.
-
-First step: Build docker image
+### First step: Build docker image
 docker build -t tapeltauer/etpro .
 
-Second Step: Run the server in docker, detached and with port forwarding
+### Second Step: Run the server in docker, detached and with port forwarding
 docker run -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
 
-Enjoy the game!
+### Enjoy the game!
 
+## You might need some of these commands
 
-You might need some of these commands
+>Command to start the server after stopping
+>docker stop wolf_applestain
 
-Command to start the server after stopping
-docker stop wolf_applestain
+>Command to start the server after stopping
+>docker start wolf_applestain
 
-Command to start the server after stopping
-docker start wolf_applestain
+>Command to run the server detached and autorestart on failure
+>docker run --restart=always -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
 
-Command to run the server detached and autorestart on failure
-docker run --restart=always -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
+### Authors:
 
-Authors:
+- Tom Apeltauer (Docker version)
+- Kevin Rudissaar (original set of scripts that set up the server)
 
-Tom Apeltauer (Docker version)
-Kevin Rudissaar (original set of scripts that set up the server)
+----------------------------------------------------------
 
 HERE FOLLOWS instructions from the original repository of original author Kevin Rudissaar as he has written it:
 
