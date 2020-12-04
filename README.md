@@ -38,7 +38,7 @@ Command to run the server detached and autorestart on failure
 
 ----------------------------------------------------------
 
-HERE FOLLOWS instructions from the original repository of original author Kevin Rudissaar as he has written it:
+## HERE FOLLOWS instructions from the original repository of original author Kevin Rudissaar as he has written it:
 
  Wolfenstein: Enemy Territory Server Setup
 
