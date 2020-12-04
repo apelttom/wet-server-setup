@@ -1,34 +1,34 @@
 # How to set up Wolfenstein Enemy Territory 2.06b PRO server Docker version
  
 You have to allow some udp traffic on ports 27960 - 27970. To do this simply use program ufw and these commands:
-    sudo ufw allow 27950:27970/udp
-    sudo ufw enable
+    `sudo ufw allow 27950:27970/udp`
+    `sudo ufw enable`
 
 Then restart the machine
 
 You will probably wanna tweak out the configuration you can find it in the folder source/configs/etpro.cfg You should at least change the ip address of the server. Then proceed with server startup.
 
 ### First step: Build docker image
-docker build -t tapeltauer/etpro .
+`docker build -t tapeltauer/etpro .`
 
 ### Second Step: Run the server in docker, detached and with port forwarding
-docker run -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
+`docker run -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro`
 
 ### Enjoy the game!
 
 ## You might need some of these commands
 
->Command to start the server after stopping
+Command to start the server after stopping
 
-docker stop wolf_applestain
+`docker stop wolf_applestain`
 
->Command to start the server after stopping
+Command to start the server after stopping
 
-docker start wolf_applestain
+`docker start wolf_applestain`
 
->Command to run the server detached and autorestart on failure
+Command to run the server detached and autorestart on failure
 
-docker run --restart=always -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro
+`docker run --restart=always -d -p 27950-27970:27950-27970/udp --name wolf_applestain tapeltauer/etpro`
 
 ### Authors:
 
@@ -50,8 +50,6 @@ Guides
 Here is a list of available guides to help you with your setup, you should keep in mind that root permissions are required to run scripts.
 
 [ETPro Match Server](#etpro-match-server)
-
-ETPro Match Server
 
 If you would like to set up a ETPro match server, follow given instruction for your distribution of choice:
 
